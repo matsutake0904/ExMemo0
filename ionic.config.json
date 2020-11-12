@@ -1,0 +1,7 @@
+{
+  "name": "ExMemo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

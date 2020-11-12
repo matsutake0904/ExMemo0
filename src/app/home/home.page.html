@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+    <ion-button (click)="refresh()">
+      <ion-icon slot="icon-only" name="person-circle" ></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="ion-padding" (submit)="addItem()" #f="ngForm">
+    <ion-item lines="full" class="ion-padding-bottom">
+      <ion-label position="floating">Item</ion-label>
+      <ion-input type="text" [(ngModel)]="name" name="item" required minlength="2"></ion-input>
+  </ion-item>
+  <ion-button expand="block" type="submit" [disabled]="!f.form.valid">add</ion-button>
+  </form>
+  <ion-list>
+    <ion-item *ngFor="let i of items"> 
+      <ion-label>{{i.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" href="http://localhost:8100/items">List</ion-button>
+  <app-item-table></app-item-table>
+</ion-content>
+
